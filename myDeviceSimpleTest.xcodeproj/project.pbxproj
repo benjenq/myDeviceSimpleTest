@@ -12,9 +12,15 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
-		28AD73600D9D9599002E5188 /* MainWindow-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow-iPhone.xib */; };
 		C36B3A311BC5AE0A0095AD7F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C36B3A301BC5AE0A0095AD7F /* Default-568h@2x.png */; };
-		C36B3A331BC5AE470095AD7F /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C36B3A321BC5AE470095AD7F /* MainWindow-iPad.xib */; };
+		C36B3A3A1BC5AFE80095AD7F /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C36B3A371BC5AFE80095AD7F /* MainWindow-iPad.xib */; };
+		C36B3A3B1BC5AFE80095AD7F /* MainWindow-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C36B3A381BC5AFE80095AD7F /* MainWindow-iPhone.xib */; };
+		C36B3A3E1BC5B0120095AD7F /* libMobileGestalt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C36B3A3D1BC5B0120095AD7F /* libMobileGestalt.dylib */; };
+		C36B3A431BC5B0B00095AD7F /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = C36B3A421BC5B0B00095AD7F /* Utility.m */; };
+		C39333211BC5C47700D13D62 /* myMatrixView.m in Sources */ = {isa = PBXBuildFile; fileRef = C39333201BC5C47700D13D62 /* myMatrixView.m */; };
+		C39333231BC5C50500D13D62 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39333221BC5C50500D13D62 /* QuartzCore.framework */; };
+		C39333261BC5C59500D13D62 /* ScreenTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C39333251BC5C59500D13D62 /* ScreenTestViewController.xib */; };
+		C39333291BC5C5A400D13D62 /* ScreenTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C39333281BC5C5A400D13D62 /* ScreenTestViewController.m */; };
 		C3A976361BC5AC95004616BB /* DeviceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A976341BC5AC95004616BB /* DeviceInfoViewController.m */; };
 		C3A976371BC5AC95004616BB /* DeviceInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3A976351BC5AC95004616BB /* DeviceInfoViewController.xib */; };
 /* End PBXBuildFile section */
@@ -27,11 +33,21 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* myDeviceSimpleTest_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myDeviceSimpleTest_Prefix.pch; sourceTree = "<group>"; };
-		28AD735F0D9D9599002E5188 /* MainWindow-iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MainWindow-iPhone.xib"; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* myDeviceSimpleTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "myDeviceSimpleTest-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		C36B3A301BC5AE0A0095AD7F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		C36B3A321BC5AE470095AD7F /* MainWindow-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		C36B3A371BC5AFE80095AD7F /* MainWindow-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		C36B3A381BC5AFE80095AD7F /* MainWindow-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MainWindow-iPhone.xib"; sourceTree = "<group>"; };
+		C36B3A3D1BC5B0120095AD7F /* libMobileGestalt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libMobileGestalt.dylib; sourceTree = "<group>"; };
+		C36B3A3F1BC5B03B0095AD7F /* MobileGestalt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileGestalt.h; sourceTree = "<group>"; };
+		C36B3A411BC5B0B00095AD7F /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		C36B3A421BC5B0B00095AD7F /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		C36B3A481BC5B8D40095AD7F /* myDeviceSimpleTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "myDeviceSimpleTest-Info.plist"; sourceTree = SOURCE_ROOT; };
+		C393331F1BC5C47700D13D62 /* myMatrixView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myMatrixView.h; sourceTree = "<group>"; };
+		C39333201BC5C47700D13D62 /* myMatrixView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myMatrixView.m; sourceTree = "<group>"; };
+		C39333221BC5C50500D13D62 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C39333251BC5C59500D13D62 /* ScreenTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScreenTestViewController.xib; sourceTree = "<group>"; };
+		C39333271BC5C5A400D13D62 /* ScreenTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenTestViewController.h; sourceTree = "<group>"; };
+		C39333281BC5C5A400D13D62 /* ScreenTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenTestViewController.m; sourceTree = "<group>"; };
 		C3A976331BC5AC95004616BB /* DeviceInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoViewController.h; sourceTree = "<group>"; };
 		C3A976341BC5AC95004616BB /* DeviceInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoViewController.m; sourceTree = "<group>"; };
 		C3A976351BC5AC95004616BB /* DeviceInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceInfoViewController.xib; sourceTree = "<group>"; };
@@ -42,9 +58,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C39333231BC5C50500D13D62 /* QuartzCore.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				C36B3A3E1BC5B0120095AD7F /* libMobileGestalt.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,7 +72,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				C3A976321BC5AC74004616BB /* Code */,
 				1D3623240D0F684500981E51 /* myDeviceSimpleTestAppDelegate.h */,
 				1D3623250D0F684500981E51 /* myDeviceSimpleTestAppDelegate.m */,
 			);
@@ -74,8 +91,9 @@
 			children = (
 				C36B3A2C1BC5ADF40095AD7F /* Images */,
 				080E96DDFE201D6D7F000001 /* Classes */,
+				C3A976321BC5AC74004616BB /* Code */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				29B97317FDCFA39411CA2CEA /* Resources */,
+				C36B3A361BC5AFE80095AD7F /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -91,19 +109,10 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
-		29B97317FDCFA39411CA2CEA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				C36B3A321BC5AE470095AD7F /* MainWindow-iPad.xib */,
-				28AD735F0D9D9599002E5188 /* MainWindow-iPhone.xib */,
-				8D1107310486CEB800E47090 /* myDeviceSimpleTest-Info.plist */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C39333221BC5C50500D13D62 /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
@@ -127,9 +136,52 @@
 			path = DefaultPNG;
 			sourceTree = "<group>";
 		};
+		C36B3A361BC5AFE80095AD7F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C36B3A481BC5B8D40095AD7F /* myDeviceSimpleTest-Info.plist */,
+				C36B3A3D1BC5B0120095AD7F /* libMobileGestalt.dylib */,
+				C36B3A371BC5AFE80095AD7F /* MainWindow-iPad.xib */,
+				C36B3A381BC5AFE80095AD7F /* MainWindow-iPhone.xib */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C36B3A401BC5B0B00095AD7F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C36B3A411BC5B0B00095AD7F /* Utility.h */,
+				C36B3A421BC5B0B00095AD7F /* Utility.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		C393331E1BC5C47700D13D62 /* MatrixView */ = {
+			isa = PBXGroup;
+			children = (
+				C393331F1BC5C47700D13D62 /* myMatrixView.h */,
+				C39333201BC5C47700D13D62 /* myMatrixView.m */,
+			);
+			path = MatrixView;
+			sourceTree = "<group>";
+		};
+		C39333241BC5C59500D13D62 /* ScreenTest */ = {
+			isa = PBXGroup;
+			children = (
+				C39333251BC5C59500D13D62 /* ScreenTestViewController.xib */,
+				C39333271BC5C5A400D13D62 /* ScreenTestViewController.h */,
+				C39333281BC5C5A400D13D62 /* ScreenTestViewController.m */,
+			);
+			path = ScreenTest;
+			sourceTree = "<group>";
+		};
 		C3A976321BC5AC74004616BB /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				C39333241BC5C59500D13D62 /* ScreenTest */,
+				C393331E1BC5C47700D13D62 /* MatrixView */,
+				C36B3A401BC5B0B00095AD7F /* Utility */,
+				C36B3A3F1BC5B03B0095AD7F /* MobileGestalt.h */,
 				C3A976331BC5AC95004616BB /* DeviceInfoViewController.h */,
 				C3A976341BC5AC95004616BB /* DeviceInfoViewController.m */,
 				C3A976351BC5AC95004616BB /* DeviceInfoViewController.xib */,
@@ -190,10 +242,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C36B3A331BC5AE470095AD7F /* MainWindow-iPad.xib in Resources */,
-				28AD73600D9D9599002E5188 /* MainWindow-iPhone.xib in Resources */,
 				C3A976371BC5AC95004616BB /* DeviceInfoViewController.xib in Resources */,
+				C39333261BC5C59500D13D62 /* ScreenTestViewController.xib in Resources */,
+				C36B3A3A1BC5AFE80095AD7F /* MainWindow-iPad.xib in Resources */,
 				C36B3A311BC5AE0A0095AD7F /* Default-568h@2x.png in Resources */,
+				C36B3A3B1BC5AFE80095AD7F /* MainWindow-iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +257,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C36B3A431BC5B0B00095AD7F /* Utility.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				C39333291BC5C5A400D13D62 /* ScreenTestViewController.m in Sources */,
+				C39333211BC5C47700D13D62 /* myMatrixView.m in Sources */,
 				1D3623260D0F684500981E51 /* myDeviceSimpleTestAppDelegate.m in Sources */,
 				C3A976361BC5AC95004616BB /* DeviceInfoViewController.m in Sources */,
 			);
@@ -224,6 +280,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = myDeviceSimpleTest_Prefix.pch;
 				INFOPLIST_FILE = "myDeviceSimpleTest-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Resources",
+				);
 				PRODUCT_NAME = myDeviceSimpleTest;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -239,6 +299,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = myDeviceSimpleTest_Prefix.pch;
 				INFOPLIST_FILE = "myDeviceSimpleTest-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Resources",
+				);
 				PRODUCT_NAME = myDeviceSimpleTest;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -299,6 +363,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = myDeviceSimpleTest_Prefix.pch;
 				INFOPLIST_FILE = "myDeviceSimpleTest-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Resources",
+				);
 				PRODUCT_NAME = myDeviceSimpleTest;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

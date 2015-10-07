@@ -10,6 +10,10 @@
 
 
 @interface DeviceInfoViewController : UIViewController {
+    IBOutlet UILabel *lb_deveceName;
+    IBOutlet UILabel *lb_deveceBoardID;
+    IBOutlet UILabel *lb_CPUVendor;
+    IBOutlet UILabel *lb_deveceColor;
 
 }
 
