@@ -31,49 +31,6 @@
     //singleFingerDTap.delegate = self;
     [singleFingerDTap release];
     
-    NSLog(@"window=(%.1f,%.1f)",self.navigationController.view.window.frame.size.width,self.navigationController.view.window.frame.size.height);
-    
-    
-    
-    
-    
-    
-}
-- (void)viewWillLayoutSubviews{
-    [super viewWillLayoutSubviews];
-    NSLog(@"viewWillLayoutSubviews=(%.1f,%.1f)",self.view.frame.size.width,self.view.frame.size.height);
-    if (!myScroll) {
-        myScroll = [[myMatrixView alloc] initWithFrame:self.view.frame];
-        NSLog(@"myScroll=(%.1f,%.1f)",myScroll.frame.size.width,myScroll.frame.size.height);
-    }
-}
--(void)viewDidLayoutSubviews{
-    //NSLog(@"viewDidLayoutSubviews=(%.1f,%.1f)",self.view.frame.size.width,self.view.frame.size.height);
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    
-    //NSLog(@"viewWillAppear=(%.1f,%.1f)",self.view.frame.size.width,self.view.frame.size.height);
-    
-    
-}
--(void)viewDidAppear:(BOOL)animated{
-    [[UIApplication sharedApplication] setStatusBarHidden:YES];    
-    
-    [myScroll setDataSource:(id<myMatrixViewDataSource>)self];
-    [myScroll setDelegate:(id<myMatrixViewDelegate>)self];
-    
-    [myScroll setpagingEnabled:YES];
-    myScroll.scrolldirection = myMatrixScrollDirectionHorizontal;
-    
-    
-    
-    
-    NSLog(@"%.1f,%.1f",self.view.frame.size.width,self.view.frame.size.height);
-    [myScroll setFrame:self.view.frame];
-    [self.view addSubview:myScroll];
-    
-    NSLog(@"myScroll=(%.1f,%.1f)(%.1f,%.1f)",myScroll.frame.origin.x,myScroll.frame.origin.y, myScroll.frame.size.width,myScroll.frame.size.height);
     
     if (!views) {
         views = [[NSMutableArray alloc] init];
@@ -83,13 +40,50 @@
         [views removeAllObjects];
     }
     
+    
+    NSLog(@"viewDidLoad:myScroll=(%.1f,%.1f)",myScroll.frame.size.width,myScroll.frame.size.height);
+    
+    [myScroll setDataSource:(id<myMatrixViewDataSource>)self];
+    [myScroll setDelegate:(id<myMatrixViewDelegate>)self];
+    
+    [myScroll setpagingEnabled:YES];
+    myScroll.scrolldirection = myMatrixScrollDirectionHorizontal;
+    
+    
+    
+}
+- (void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+    NSLog(@"viewWillLayoutSubviews=(%.1f,%.1f)",self.view.frame.size.width,self.view.frame.size.height);
+    if (views.count >0) {
+        return; //當 View 改尺寸時會再做一次
+    }
+    
     int i = 0;
-    for (i = 0;i <=7;i++) {
+    for (i = 0;i <=10;i++) {
         UIView *v = [self createViewWithIndex:i];
         [views addObject:v];
     }
+}
+-(void)viewDidLayoutSubviews{
+    NSLog(@"viewDidLayoutSubviews=(%.1f,%.1f)",self.view.frame.size.width,self.view.frame.size.height);
+    
+}
 
-    NSLog(@"myScroll=(%.1f,%.1f)(%.1f,%.1f)",self.view.frame.origin.x,self.view.frame.origin.y, self.view.frame.size.width,self.view.frame.size.height);
+-(void)viewWillAppear:(BOOL)animated{
+    
+    NSLog(@"viewWillAppear=(%.1f,%.1f)",self.view.frame.size.width,self.view.frame.size.height);
+    
+    
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];    
+    
+    NSLog(@"viewDidAppear:myScroll=(%.1f,%.1f)(%.1f,%.1f)",myScroll.frame.origin.x,myScroll.frame.origin.y, myScroll.frame.size.width,myScroll.frame.size.height);
+    
+    
+    
+        NSLog(@"myScroll=(%.1f,%.1f)(%.1f,%.1f)",self.view.frame.origin.x,self.view.frame.origin.y, self.view.frame.size.width,self.view.frame.size.height);
 }
 
 
@@ -104,35 +98,50 @@
         }
         case 1:
         {
-            v.backgroundColor = [UIColor whiteColor];
+            v.backgroundColor = [UIColor darkGrayColor];
             break;
         }
         case 2:
         {
-            v.backgroundColor = [UIColor redColor];
+            v.backgroundColor = [UIColor grayColor];
             break;
         }
         case 3:
         {
-            v.backgroundColor = [UIColor greenColor];
+            v.backgroundColor = [UIColor lightGrayColor];
             break;
         }
         case 4:
         {
-            v.backgroundColor = [UIColor blueColor];
+            v.backgroundColor = [UIColor whiteColor];
             break;
         }
         case 5:
         {
-            v.backgroundColor = [UIColor cyanColor];
+            v.backgroundColor = [UIColor redColor];
             break;
         }
         case 6:
         {
-            v.backgroundColor = [UIColor yellowColor];
+            v.backgroundColor = [UIColor greenColor];
             break;
         }
         case 7:
+        {
+            v.backgroundColor = [UIColor blueColor];
+            break;
+        }
+        case 8:
+        {
+            v.backgroundColor = [UIColor cyanColor];
+            break;
+        }
+        case 9:
+        {
+            v.backgroundColor = [UIColor yellowColor];
+            break;
+        }
+        case 10:
         {
             v.backgroundColor = [UIColor magentaColor];
             break;
@@ -178,9 +187,10 @@
 
 -(void)dealloc{
     [views removeAllObjects];
+    [views release]; views = nil;
     [myScroll removeFromSuperview];
     [myScroll release];
-    [views release]; views = nil;
+    
     
     NSLog(@"<%p>%@ dealloc",self,[[self class] description]);
     [super dealloc];

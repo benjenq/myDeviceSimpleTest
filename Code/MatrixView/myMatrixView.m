@@ -39,6 +39,7 @@
 -(void)firstSetup{
     //NSLog(@"%@:firstSetup",[[self class] description]);
     [self setUserInteractionEnabled:YES];
+    hasFinishLayout = NO;
     _matrixRowNCol = CGPointMake(1, 1);
     _scrolldirection = myMatrixScrollDirectionVertical;
 
@@ -78,6 +79,12 @@
     }
 
     [self addSubview:_baseScrollv];
+    _baseScrollv.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin |
+    UIViewAutoresizingFlexibleWidth |
+    UIViewAutoresizingFlexibleRightMargin |
+    UIViewAutoresizingFlexibleTopMargin |
+    UIViewAutoresizingFlexibleHeight  |
+    UIViewAutoresizingFlexibleBottomMargin ;
     
     if (!_ovImgView) {
         _ovImgView = [[UIImageView alloc] initWithFrame:self.bounds];
@@ -100,8 +107,12 @@
 #pragma mark 一般函數
 - (void)layoutSubviews  //自動呼叫
 {
-    //NSLog(@"%@:awakeFromNib",[[self class] description]);
+    //NSLog(@"%@:layoutSubviews",[[self class] description]);
+    if (hasFinishLayout) {
+        return;
+    }
     [self reloadData];
+    hasFinishLayout = YES;
 }
 
 -(void)setDataSource:(id<myMatrixViewDataSource>)dataSource{
@@ -215,7 +226,7 @@
 
 - (UIView *)addViewAtIndex:(NSInteger)index
 {
-    
+    //NSLog(@"addViewAtIndex:%i",index);
     UIView *view = nil;
     
     if (index >= 0) {
@@ -347,10 +358,16 @@
 }
 */
 
--(void)dealloc{
+-(void)removeFromSuperview{
+    [super removeFromSuperview];
     [self removeAllitemViews];
     self.delegate = nil;
     self.dataSource = nil;
+}
+
+-(void)dealloc{
+    
+    
     [_itemViews removeObjectsForKeys:[_itemViews allKeys]];
     [_itemViews release];
     
@@ -365,7 +382,7 @@
     [_baseScrollv removeFromSuperview];
     [_baseScrollv release];
     
-     NSLog(@"%@ dealloc",[[self class] description]);
+     NSLog(@"<%p>%@ dealloc",self,[[self class] description]);
     [super dealloc];
 }
 

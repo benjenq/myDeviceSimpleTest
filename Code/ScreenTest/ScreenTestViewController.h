@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class myMatrixView;
 @interface ScreenTestViewController : UIViewController{
-    myMatrixView *myScroll;
+    IBOutlet myMatrixView *myScroll;
     
     NSMutableArray *views;
     

@@ -27,6 +27,8 @@ typedef NS_ENUM(NSInteger,myMatrixScrollDirection)
     CGPoint _matrixRowNCol;
     myMatrixScrollDirection _scrolldirection;
     UIScrollView *_baseScrollv;
+    
+    BOOL hasFinishLayout;
 }
 
 @property (nonatomic, retain) IBOutlet id<myMatrixViewDataSource> dataSource;   //可在XIB畫面上拉，並自動啟用 setdataSource
