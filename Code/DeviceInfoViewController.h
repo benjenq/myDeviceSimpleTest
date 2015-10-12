@@ -14,6 +14,10 @@
     IBOutlet UILabel *lb_deveceBoardID;
     IBOutlet UILabel *lb_CPUVendor;
     IBOutlet UILabel *lb_deveceColor;
+    
+    IBOutlet UIImageView *_imgV_CPU;
+    
+    NSString *_imageName;
 
 }
 

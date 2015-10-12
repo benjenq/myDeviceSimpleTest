@@ -32,15 +32,47 @@
 
     lb_deveceName.text = [UIDevice deviceNameString];
     lb_deveceBoardID.text = [UIDevice deviceBoardID];
-    if ([lb_deveceBoardID.text.uppercaseString isEqualToString:@"S8000"]) {
+    
+    NSString* str2Cmp = lb_deveceBoardID.text.lowercaseString;
+    
+    if ([str2Cmp isEqualToString:@"s8000"]) {
         lb_CPUVendor.text = @"Samsung(三星)";
+        _imageName = @"A9";
     }
-    else if ([lb_deveceBoardID.text.uppercaseString isEqualToString:@"S8003"]) {
+    else if ([str2Cmp isEqualToString:@"s8003"]) {
         lb_CPUVendor.text = @"TSMC(台積電)";
+        _imageName = @"A9";
     }
     else{
         lb_CPUVendor.text = @"";
     }
+    
+    
+    if ([str2Cmp hasPrefix:@"s5l8960"] || [str2Cmp hasPrefix:@"s5l8965"]){
+        _imageName = @"A7";
+    }else if ([str2Cmp hasPrefix:@"t7000"]){
+        _imageName = @"A8";
+    }else if ([str2Cmp hasPrefix:@"t7001"]){
+        _imageName = @"A8X";
+    }else if ([str2Cmp hasPrefix:@"s5l8950"]){
+        _imageName = @"A6";
+    }else if ([str2Cmp hasPrefix:@"s5l8955"]){
+        _imageName = @"A6X";
+    }else if ([str2Cmp hasPrefix:@"s5l8940"] || [str2Cmp hasPrefix:@"s5l8942"] ){
+        _imageName = @"A5";
+    }else if ([str2Cmp hasPrefix:@"s5l8945"]){
+        _imageName = @"A5X";
+    }else if ([str2Cmp hasPrefix:@"s5l8930"]){
+        _imageName = @"A4";
+    }
+    
+    if(_imageName) {
+        _imgV_CPU.image = [UIImage imageNamed:_imageName];
+        _imgV_CPU.backgroundColor = [UIColor clearColor];
+        _imgV_CPU.contentMode = UIViewContentModeScaleAspectFit;
+    }
+    
+    
     lb_deveceColor.text = [UIDevice deviceColorString];
 
     [lb_deveceColor setBackgroundColor:[UIDevice deviceColor]];

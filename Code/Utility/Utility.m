@@ -89,6 +89,8 @@ NSString *const DataTitle  = @"DataTitle";
 
 @end
 #pragma mark - 機器資訊相關
+
+static CFStringRef (*$MGCopyAnswer)(CFStringRef);
 @implementation UIDevice (DeviceImplement)
 
 +(NSString *)deviceNameString{
@@ -102,13 +104,28 @@ NSString *const DataTitle  = @"DataTitle";
 }
 
 +(NSString *)deviceBoardID{
+    /*
     CFStringRef _boardID = MGCopyAnswer(kMGHardwarePlatform);
     return (NSString *) _boardID;
+    */
+    void *gestalt = dlopen("/usr/lib/libMobileGestalt.dylib", RTLD_GLOBAL | RTLD_LAZY);
+    $MGCopyAnswer = dlsym(gestalt, "MGCopyAnswer");
+    CFStringRef _boardID = (CFStringRef)$MGCopyAnswer(kMGHardwarePlatform);
+    return (NSString *) _boardID;
+    
 }
 
 +(NSString *)deviceColorString{
+    /*
     CFStringRef _colorString = MGCopyAnswer(kMGDeviceColor);
     return (NSString *) _colorString;
+     */
+    
+    void *gestalt = dlopen("/usr/lib/libMobileGestalt.dylib", RTLD_GLOBAL | RTLD_LAZY);
+    $MGCopyAnswer = dlsym(gestalt, "MGCopyAnswer");
+    CFStringRef _colorString = (CFStringRef)$MGCopyAnswer(kMGDeviceColor);
+    return (NSString *) _colorString;
+    
 }
 
 +(UIColor *)deviceColor{
