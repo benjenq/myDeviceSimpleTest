@@ -30,7 +30,9 @@
     
     self.title = @"裝置與螢幕測試";
 
-    lb_deveceName.text = [UIDevice deviceNameString];
+    lb_deveceName.text = NSLocalizedString([UIDevice deviceNameString], [UIDevice deviceNameString]);
+    
+    //CPU
     lb_deveceBoardID.text = [UIDevice deviceBoardID];
     
     NSString* str2Cmp = lb_deveceBoardID.text.lowercaseString;
@@ -72,6 +74,10 @@
         _imgV_CPU.contentMode = UIViewContentModeScaleAspectFit;
     }
     
+    //機型
+    lb_deveceModelRegion.text = [NSString stringWithFormat:@"%@%@",[UIDevice deviceModelNumber],[UIDevice deviceRegionCode]];
+    
+    //顏色
     
     lb_deveceColor.text = [UIDevice deviceColorString];
 
@@ -86,7 +92,7 @@
             lb_deveceColor.backgroundColor = [UIColor whiteColor];
             lb_deveceColor.textColor = [UIColor blackColor];
         }
-        return;
+        return; //裝置為黑或白時，底下無法運行。
     }
     
     

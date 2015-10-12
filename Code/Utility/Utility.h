@@ -39,6 +39,8 @@ extern NSString *const DataTitle;
 
 +(NSString *)deviceNameString;
 +(NSString *)deviceBoardID;
++(NSString *)deviceModelNumber;
++(NSString *)deviceRegionCode;
 +(NSString *)deviceColorString;
 +(UIColor *)deviceColor;
 

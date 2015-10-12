@@ -12,6 +12,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		C31D88B01BCC3E3700242E4F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C31D88AD1BCC3E3700242E4F /* Localizable.strings */; };
 		C36B3A311BC5AE0A0095AD7F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C36B3A301BC5AE0A0095AD7F /* Default-568h@2x.png */; };
 		C36B3A3A1BC5AFE80095AD7F /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C36B3A371BC5AFE80095AD7F /* MainWindow-iPad.xib */; };
 		C36B3A3B1BC5AFE80095AD7F /* MainWindow-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C36B3A381BC5AFE80095AD7F /* MainWindow-iPhone.xib */; };
@@ -43,6 +44,8 @@
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* myDeviceSimpleTest_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myDeviceSimpleTest_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C31D88AE1BCC3E3700242E4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C31D88AF1BCC3E3700242E4F /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_TW; path = zh_TW.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C36B3A301BC5AE0A0095AD7F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C36B3A371BC5AFE80095AD7F /* MainWindow-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		C36B3A381BC5AFE80095AD7F /* MainWindow-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MainWindow-iPhone.xib"; sourceTree = "<group>"; };
@@ -137,9 +140,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C31D88AC1BCC3E3700242E4F /* LocalizableResources */ = {
+			isa = PBXGroup;
+			children = (
+				C31D88AD1BCC3E3700242E4F /* Localizable.strings */,
+			);
+			path = LocalizableResources;
+			sourceTree = "<group>";
+		};
 		C36B3A2C1BC5ADF40095AD7F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C31D88AC1BCC3E3700242E4F /* LocalizableResources */,
 				C3F7BDC11BCBCB300009FD4C /* CPU */,
 				C36B3A2F1BC5AE0A0095AD7F /* DefaultPNG */,
 			);
@@ -261,6 +273,7 @@
 				French,
 				German,
 				en,
+				zh_TW,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -289,6 +302,7 @@
 				C36B3A3A1BC5AFE80095AD7F /* MainWindow-iPad.xib in Resources */,
 				C36B3A311BC5AE0A0095AD7F /* Default-568h@2x.png in Resources */,
 				C3F7BDCD1BCBCB300009FD4C /* A5.png in Resources */,
+				C31D88B01BCC3E3700242E4F /* Localizable.strings in Resources */,
 				C36B3A3B1BC5AFE80095AD7F /* MainWindow-iPhone.xib in Resources */,
 				C3F7BDD11BCBCB300009FD4C /* A7.png in Resources */,
 			);
@@ -311,6 +325,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C31D88AD1BCC3E3700242E4F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C31D88AE1BCC3E3700242E4F /* en */,
+				C31D88AF1BCC3E3700242E4F /* zh_TW */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {

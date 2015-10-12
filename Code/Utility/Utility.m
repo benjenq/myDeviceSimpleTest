@@ -115,6 +115,21 @@ static CFStringRef (*$MGCopyAnswer)(CFStringRef);
     
 }
 
++(NSString *)deviceModelNumber{
+    void *gestalt = dlopen("/usr/lib/libMobileGestalt.dylib", RTLD_GLOBAL | RTLD_LAZY);
+    $MGCopyAnswer = dlsym(gestalt, "MGCopyAnswer");
+    CFStringRef _modelNumber = (CFStringRef)$MGCopyAnswer(kMGModelNumber);
+    return (NSString *) _modelNumber;
+}
+
++(NSString *)deviceRegionCode{
+    void *gestalt = dlopen("/usr/lib/libMobileGestalt.dylib", RTLD_GLOBAL | RTLD_LAZY);
+    $MGCopyAnswer = dlsym(gestalt, "MGCopyAnswer");
+    CFStringRef _regionCode = (CFStringRef)$MGCopyAnswer(kMGRegionCode);
+    return (NSString *) _regionCode;
+}
+
+
 +(NSString *)deviceColorString{
     /*
     CFStringRef _colorString = MGCopyAnswer(kMGDeviceColor);
